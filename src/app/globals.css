@@ -1,33 +1,51 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --primary-color: #616163;
+  --secondary-color: #D3D0CB;
+  --background-color: #20063B;
+  --text-color: #ffffff;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+nav {
+  background-color: var(--primary-color);
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
   }
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  padding: 10px;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar-nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.navbar-nav a:hover {
+  color: var(--secondary-color);
+  font-size: 1.5em;
 }
